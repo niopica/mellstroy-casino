@@ -1,0 +1,28 @@
+// Card component styles
+@use '../styles/variables' as *;
+
+.card {
+  @include card-base;
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-glow;
+    }
+
+    &:focus {
+      outline: 2px solid $primary-cyan;
+      outline-offset: 2px;
+    }
+  }
+
+  &--glass {
+    @include glass-effect;
+  }
+
+  &--neon {
+    @include neon-border;
+  }
+}

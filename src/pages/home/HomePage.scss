@@ -1,0 +1,28 @@
+/* ===== MELLSTROY CASINO - HOME PAGE ===== */
+
+/* Изоляция стилей для главной страницы */
+.home-page {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+/* Скроллбары для главной страницы */
+.home-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.home-page::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+  border-radius: 4px;
+}
+
+.home-page::-webkit-scrollbar-thumb {
+  background: var(--primary-purple);
+  border-radius: 4px;
+}
+
+.home-page::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-cyan);
+}

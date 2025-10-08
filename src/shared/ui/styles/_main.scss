@@ -1,0 +1,430 @@
+// ===== MELLSTROY CASINO - MAIN STYLES =====
+
+@use 'sass:color';
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+// Сброс стилей
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  background: $bg-dark;
+  color: $text-primary;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+// Контейнеры
+.container {
+  @include container-base;
+}
+
+.section {
+  @include section-base;
+}
+
+.section-title {
+  @include section-title;
+}
+
+// Кнопки
+.btn {
+  @include button-base;
+
+  &--primary {
+    background: $gradient-primary;
+    color: $text-primary;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: $shadow-glow;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $text-primary;
+    border: 2px solid $primary-cyan;
+
+    &:hover:not(:disabled) {
+      background: $primary-cyan;
+      color: $bg-dark;
+    }
+  }
+
+  &--danger {
+    background: $primary-pink;
+    color: $text-primary;
+
+    &:hover:not(:disabled) {
+      background: color.adjust($primary-pink, $lightness: -10%);
+    }
+  }
+
+  &--sm {
+    padding: 8px 16px;
+    font-size: $font-size-sm;
+  }
+
+  &--lg {
+    padding: 16px 32px;
+    font-size: $font-size-lg;
+  }
+}
+
+// Дополнительные классы кнопок для совместимости
+.btn-primary {
+  @extend .btn--primary;
+}
+
+.btn-secondary {
+  @extend .btn--secondary;
+}
+
+.btn-danger {
+  @extend .btn--danger;
+}
+
+.btn-sm {
+  @extend .btn--sm;
+}
+
+.btn-lg {
+  @extend .btn--lg;
+}
+
+// Карточки
+.card {
+  @include card-base;
+
+  &--glass {
+    @include glass-effect;
+  }
+
+  &--neon {
+    @include neon-border;
+  }
+}
+
+// Сетки
+.grid {
+  display: grid;
+  gap: 24px;
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+// Flex утилиты
+.flex {
+  display: flex;
+
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--between {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+}
+
+// Отступы
+.p {
+  &-0 {
+    padding: 0;
+  }
+  &-1 {
+    padding: 8px;
+  }
+  &-2 {
+    padding: 16px;
+  }
+  &-3 {
+    padding: 24px;
+  }
+  &-4 {
+    padding: 32px;
+  }
+  &-5 {
+    padding: 40px;
+  }
+}
+
+.m {
+  &-0 {
+    margin: 0;
+  }
+  &-1 {
+    margin: 8px;
+  }
+  &-2 {
+    margin: 16px;
+  }
+  &-3 {
+    margin: 24px;
+  }
+  &-4 {
+    margin: 32px;
+  }
+  &-5 {
+    margin: 40px;
+  }
+}
+
+// Текст
+.text {
+  &--center {
+    text-align: center;
+  }
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--primary {
+    color: $text-primary;
+  }
+  &--secondary {
+    color: $text-secondary;
+  }
+  &--muted {
+    color: $text-muted;
+  }
+  &--accent {
+    color: $text-accent;
+  }
+  &--gradient {
+    @include gradient-text;
+  }
+
+  &--xs {
+    font-size: $font-size-xs;
+  }
+  &--sm {
+    font-size: $font-size-sm;
+  }
+  &--base {
+    font-size: $font-size-base;
+  }
+  &--lg {
+    font-size: $font-size-lg;
+  }
+  &--xl {
+    font-size: $font-size-xl;
+  }
+  &--2xl {
+    font-size: $font-size-2xl;
+  }
+  &--3xl {
+    font-size: $font-size-3xl;
+  }
+  &--4xl {
+    font-size: $font-size-4xl;
+  }
+  &--5xl {
+    font-size: $font-size-5xl;
+  }
+  &--6xl {
+    font-size: $font-size-6xl;
+  }
+
+  &--light {
+    font-weight: $font-weight-light;
+  }
+  &--normal {
+    font-weight: $font-weight-normal;
+  }
+  &--medium {
+    font-weight: $font-weight-medium;
+  }
+  &--semibold {
+    font-weight: $font-weight-semibold;
+  }
+  &--bold {
+    font-weight: $font-weight-bold;
+  }
+  &--extrabold {
+    font-weight: $font-weight-extrabold;
+  }
+  &--black {
+    font-weight: $font-weight-black;
+  }
+}
+
+// Анимации
+.animate {
+  &--fadeIn {
+    animation: fadeIn 0.5s ease;
+  }
+
+  &--slideInLeft {
+    animation: slideInLeft 0.5s ease;
+  }
+
+  &--slideInRight {
+    animation: slideInRight 0.5s ease;
+  }
+
+  &--bounce {
+    animation: bounce 1s ease;
+  }
+
+  &--pulse {
+    @include pulse-animation;
+  }
+}
+
+// Скрытие элементов
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Адаптивность
+@media (max-width: $breakpoint-lg) {
+  .grid {
+    &--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .grid {
+    &--4,
+    &--3,
+    &--2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: $font-size-3xl;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 30px 0;
+  }
+
+  .section-title {
+    font-size: $font-size-2xl;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: $font-size-sm;
+  }
+}
+
+/* ===== СЕКЦИИ ГЛАВНОЙ СТРАНИЦЫ ===== */
+
+/* Контейнер для падающих донатов */
+.donation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--z-donations);
+  overflow: hidden;
+}
+
+/* Уведомления о событиях */
+.event-notifications {
+  position: fixed;
+  top: calc(var(--header-height) + 20px);
+  right: 20px;
+  z-index: var(--z-notification);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 350px;
+  pointer-events: none;
+}
+
+.event-notification {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-lg);
+  padding: 16px 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all var(--transition-normal);
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-notification.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.event-notification.hide {
+  transform: translateX(100%);
+  opacity: 0;
+}

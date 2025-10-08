@@ -1,0 +1,122 @@
+/* ===== MELLSTROY CASINO - RECENT DONATIONS ===== */
+
+.donations-section {
+  margin: 32px 0;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.recent-donations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.donation-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+  transition: var(--transition-normal);
+}
+
+.donation-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--primary-green);
+}
+
+.donation-icon {
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+.donation-info {
+  flex: 1;
+}
+
+.donation-amount {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.donation-message {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.donation-time {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .donations-section {
+    margin: 24px 0;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: 16px;
+  }
+
+  .donation-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .donation-amount {
+    font-size: var(--font-size-md);
+  }
+
+  .donation-message {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .donations-section {
+    margin: 20px 0;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-md);
+    margin-bottom: 12px;
+  }
+
+  .donation-item {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .donation-icon {
+    font-size: var(--font-size-md);
+  }
+
+  .donation-amount {
+    font-size: var(--font-size-sm);
+  }
+
+  .donation-message {
+    font-size: 10px;
+  }
+
+  .donation-time {
+    font-size: 9px;
+  }
+}

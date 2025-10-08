@@ -1,0 +1,49 @@
+/* ===== MELLSTROY CASINO - GAMES GRID ===== */
+
+.games-section {
+  background: linear-gradient(135deg, rgba(108, 0, 255, 0.05) 0%, rgba(255, 0, 122, 0.05) 100%);
+  padding: 80px 0;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--primary-purple);
+}
+
+.game-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: 20px;
+}
+
+.game-card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.game-card p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

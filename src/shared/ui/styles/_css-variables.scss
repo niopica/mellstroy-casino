@@ -1,0 +1,108 @@
+/* ===== MELLSTROY CASINO - CSS VARIABLES ===== */
+
+:root {
+  /* Основные цвета */
+  --primary-purple: #6c00ff;
+  --primary-cyan: #00e0ff;
+  --primary-pink: #ff007a;
+  --primary-green: #00ff9c;
+  --primary-gold: #ffd700;
+
+  /* Градиенты */
+  --gradient-primary: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+  --gradient-secondary: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
+  --gradient-accent: linear-gradient(135deg, var(--primary-green), var(--primary-cyan));
+  --gradient-gold: linear-gradient(135deg, var(--primary-gold), #ffed4e);
+
+  /* Фоновые цвета */
+  --bg-dark: #0a0a0a;
+  --bg-darker: #050505;
+  --bg-card: rgba(15, 15, 15, 0.8);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-hover: rgba(255, 255, 255, 0.1);
+
+  /* Текстовые цвета */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --text-accent: var(--primary-cyan);
+
+  /* Границы и тени */
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 30px;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-glow: 0 0 20px rgba(108, 0, 255, 0.3);
+  --shadow-glow: 0 0 30px rgba(0, 224, 255, 0.2);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* Размеры */
+  --header-height: 80px;
+  --player-height: 80px;
+  --container-max-width: 1400px;
+  --container-padding: 20px;
+
+  /* Анимации */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Z-index */
+  --z-header: 1000;
+  --z-player: 999;
+  --z-modal: 2000;
+  --z-notification: 3000;
+  --z-donations: 1;
+
+  /* Шрифты */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Размеры шрифтов */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+
+  /* Брейкпоинты */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1920px;
+}
+
+/* Темная тема (по умолчанию) */
+[data-theme='dark'] {
+  --bg-dark: #0a0a0a;
+  --bg-darker: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+}
+
+/* Светлая тема (если понадобится) */
+[data-theme='light'] {
+  --bg-dark: #f8f9fa;
+  --bg-darker: #e9ecef;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #adb5bd;
+  --border-color: rgba(0, 0, 0, 0.1);
+}

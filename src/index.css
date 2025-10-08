@@ -1,0 +1,233 @@
+@import './shared/ui/styles/css-variables.css';
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+}
+
+/* ===== КАСТОМНЫЙ СКРОЛЛБАР ===== */
+
+/* Основной скроллбар */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Трек скроллбара */
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6c00ff 0%, #00e0ff 100%) !important;
+  border-radius: 6px !important;
+  border: 2px solid #0a0a0a !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Ползунок при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00e0ff 0%, #6c00ff 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 8px rgba(0, 224, 255, 0.3) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Ползунок при активном состоянии */
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #ffd700 0%, #ff8c00 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 6px 12px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Угол скроллбара */
+::-webkit-scrollbar-corner {
+  background: #0a0a0a !important;
+  border-radius: 6px !important;
+}
+
+/* Скроллбар для HTML элемента */
+html {
+  scrollbar-width: thin !important;
+  scrollbar-color: #6c00ff #0a0a0a !important;
+}
+
+html::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+html::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6c00ff 0%, #00e0ff 100%) !important;
+  border-radius: 6px !important;
+  border: 2px solid #0a0a0a !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00e0ff 0%, #6c00ff 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 8px rgba(0, 224, 255, 0.3) !important;
+  transform: scale(1.05) !important;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #ffd700 0%, #ff8c00 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 6px 12px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Скроллбар для Firefox */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: #6c00ff #0a0a0a !important;
+}
+
+/* Скроллбар для мобильных устройств */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+    border-radius: 4px;
+    border: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6c00ff;
+    border-radius: 4px;
+    border: 1px solid #0a0a0a;
+    box-shadow: none;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00e0ff;
+    transform: none;
+    box-shadow: none;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: #ffd700;
+    box-shadow: none;
+  }
+}
+
+/* Анимация появления скроллбара */
+@keyframes scrollbarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  animation: scrollbarFadeIn 0.5s ease-out;
+}
+
+/* Эффект свечения для активного скроллбара */
+::-webkit-scrollbar-thumb:active {
+  animation: scrollbarGlow 0.3s ease-out;
+}
+
+@keyframes scrollbarGlow {
+  0% {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 6px 12px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 16px rgba(255, 215, 0, 0.6);
+  }
+  100% {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 6px 12px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* Выделение текста */
+::selection {
+  background: var(--primary-purple);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: var(--primary-purple);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

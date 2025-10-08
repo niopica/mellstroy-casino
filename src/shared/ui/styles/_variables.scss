@@ -1,0 +1,275 @@
+// ===== MELLSTROY CASINO - SCSS VARIABLES =====
+
+// Основные цвета
+$primary-purple: #6c00ff;
+$primary-cyan: #00e0ff;
+$primary-pink: #ff007a;
+$primary-green: #00ff9c;
+$primary-gold: #ffd700;
+
+// Градиенты
+$gradient-primary: linear-gradient(135deg, $primary-purple, $primary-cyan);
+$gradient-secondary: linear-gradient(135deg, $primary-pink, $primary-purple);
+$gradient-accent: linear-gradient(135deg, $primary-green, $primary-cyan);
+$gradient-gold: linear-gradient(135deg, $primary-gold, #ffed4e);
+
+// Фоновые цвета
+$bg-dark: #0a0a0a;
+$bg-darker: #050505;
+$bg-card: rgba(15, 15, 15, 0.8);
+$bg-glass: rgba(255, 255, 255, 0.05);
+$bg-glass-hover: rgba(255, 255, 255, 0.1);
+
+// Текстовые цвета
+$text-primary: #ffffff;
+$text-secondary: #b0b0b0;
+$text-muted: #808080;
+$text-accent: $primary-cyan;
+
+// Границы и тени
+$border-radius: 12px;
+$border-radius-lg: 20px;
+$border-radius-xl: 30px;
+$border-color: rgba(255, 255, 255, 0.1);
+$border-glow: 0 0 20px rgba(108, 0, 255, 0.3);
+$shadow-glow: 0 0 30px rgba(0, 224, 255, 0.2);
+$shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+// Размеры
+$header-height: 80px;
+$player-height: 80px;
+$container-max-width: 1400px;
+$container-padding: 20px;
+
+// Анимации
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+$transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Z-index
+$z-header: 1000;
+$z-player: 999;
+$z-modal: 2000;
+$z-notification: 3000;
+$z-donations: 1;
+
+// Шрифты
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// Размеры шрифтов
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 3.75rem;
+
+// Брейкпоинты
+$breakpoint-xs: 320px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1440px;
+$breakpoint-3xl: 1920px;
+// Миксины
+@mixin gradient-text($gradient: $gradient-primary) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin glow-effect($color: $primary-cyan) {
+  box-shadow: 0 0 30px rgba($color, 0.2);
+}
+
+@mixin glass-effect {
+  background: $bg-glass;
+  backdrop-filter: blur(10px);
+  border: 1px solid $border-color;
+}
+
+@mixin neon-border($color: $primary-cyan) {
+  border: 2px solid $color;
+  box-shadow: 0 0 20px rgba($color, 0.3);
+}
+
+@mixin pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: $border-radius;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  outline: none;
+
+  &:focus {
+    outline: 2px solid $primary-cyan;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin card-base {
+  background: $bg-card;
+  border-radius: $border-radius-lg;
+  padding: 24px;
+  box-shadow: $shadow-card;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-glow;
+  }
+}
+
+@mixin container-base {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+@mixin section-base {
+  padding: 60px 0;
+}
+
+@mixin section-title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  margin-bottom: 40px;
+  @include gradient-text;
+}
+
+// Анимации
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+// Утилитарные классы
+.gradient-text {
+  @include gradient-text;
+}
+
+.glow-effect {
+  @include glow-effect;
+}
+
+.glass-effect {
+  @include glass-effect;
+}
+
+.neon-border {
+  @include neon-border;
+}
+
+.pulse-animation {
+  @include pulse-animation;
+}
+
+// Адаптивные утилиты
+@media (max-width: $breakpoint-md) {
+  :root {
+    --container-padding: 15px;
+    --header-height: 60px;
+    --player-height: 60px;
+    --font-size-5xl: 2rem;
+    --font-size-6xl: 2.5rem;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  :root {
+    --container-padding: 10px;
+    --header-height: 50px;
+    --player-height: 50px;
+    --font-size-4xl: 1.5rem;
+    --font-size-5xl: 1.75rem;
+  }
+}

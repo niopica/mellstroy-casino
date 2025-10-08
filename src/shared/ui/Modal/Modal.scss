@@ -1,0 +1,75 @@
+// Modal component styles
+@use '../styles/variables' as *;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-modal;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: $bg-card;
+  border-radius: $border-radius-lg;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: $shadow-card;
+  border: 1px solid $border-color;
+  animation: slideInRight 0.3s ease;
+
+  @media (max-width: $breakpoint-md) {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 24px;
+}
+
+.modal-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  @include gradient-text;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: $text-secondary;
+  font-size: $font-size-xl;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: $border-radius;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $text-primary;
+    background: $bg-glass-hover;
+  }
+
+  &:focus {
+    outline: 2px solid $primary-cyan;
+    outline-offset: 2px;
+  }
+}
+
+.modal-body {
+  padding: 0 24px 24px 24px;
+}

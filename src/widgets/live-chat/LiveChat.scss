@@ -1,0 +1,208 @@
+/* ===== MELLSTROY CASINO - LIVE CHAT ===== */
+
+.chat-section {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.chat-desktop {
+  position: fixed;
+  right: 20px;
+  top: calc(var(--header-height) + 20px);
+  width: 350px;
+  height: calc(100vh - var(--header-height) - 40px);
+  z-index: 100;
+}
+
+.chat-mobile {
+  margin: 20px 0;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--bg-glass);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chat-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chat-toggle {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+}
+
+.chat-toggle:hover {
+  background: var(--bg-glass-hover);
+  transform: scale(1.1);
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 60px);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-message {
+  padding: 8px 12px;
+  background: var(--bg-glass);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.chat-message.donation {
+  background: linear-gradient(135deg, rgba(255, 0, 122, 0.1), rgba(108, 0, 255, 0.1));
+  border-color: var(--primary-pink);
+}
+
+.message-author {
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-cyan);
+  margin-bottom: 4px;
+}
+
+.message-text {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.donation-amount {
+  color: var(--primary-green);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  margin: 4px 0;
+}
+
+.message-time {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 16px;
+  gap: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--primary-cyan);
+  box-shadow: 0 0 0 2px rgba(0, 224, 255, 0.2);
+}
+
+.chat-send-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+}
+
+.chat-send-btn:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .chat-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-mobile {
+    margin: 16px 0;
+  }
+
+  .chat-header {
+    padding: 12px 16px;
+  }
+
+  .chat-messages {
+    padding: 12px;
+  }
+
+  .chat-input-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-mobile {
+    margin: 12px 0;
+  }
+
+  .chat-header {
+    padding: 10px 12px;
+  }
+
+  .chat-header h3 {
+    font-size: var(--font-size-md);
+  }
+
+  .chat-messages {
+    padding: 10px;
+  }
+
+  .chat-input-container {
+    padding: 10px;
+  }
+
+  .chat-input {
+    padding: 10px 12px;
+    font-size: var(--font-size-xs);
+  }
+
+  .chat-send-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

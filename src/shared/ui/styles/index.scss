@@ -1,0 +1,38 @@
+// ===== MELLSTROY CASINO - MAIN STYLES ENTRY POINT =====
+
+// Все @use правила должны быть в начале
+@use './variables' as *;
+@use './main';
+
+// Импорт стилей компонентов
+@use '../Button/Button.scss';
+@use '../Card/Card.scss';
+@use '../Modal/Modal.scss';
+
+// Импорт стилей виджетов
+@use '../../../widgets/header/Header.scss';
+@use '../../../widgets/layout/Layout.scss';
+@use '../../../widgets/music-player/MusicPlayer.scss';
+@use '../../../widgets/casino-banner/CasinoBanner.scss';
+@use '../../../widgets/games-grid/GamesGrid.scss';
+@use '../../../widgets/stream-section/StreamSection.scss';
+@use '../../../widgets/event-counters/EventCounters.scss';
+@use '../../../widgets/video-player/VideoPlayer.scss';
+@use '../../../widgets/live-chat/LiveChat.scss';
+@use '../../../widgets/recent-donations/RecentDonations.scss';
+@use '../../../widgets/other-streams/OtherStreams.scss';
+
+// Импорт стилей фич
+@use '../../../features/donation-system/DonationSection.scss';
+@use '../../../features/about/AboutTeaser.scss';
+
+// Импорт стилей страниц
+@use '../../../pages/home/HomePage.scss';
+@use '../../../pages/stream/StreamPage.scss';
+@use '../../../pages/games/GamesPage.scss';
+@use '../../../pages/challenges/ChallengesPage.scss';
+@use '../../../pages/help/HelpPage.scss';
+@use '../../../pages/about/AboutPage.scss';
+
+// @import правила в конце
+@import './css-variables.css';

@@ -1,0 +1,62 @@
+// Button component styles
+@use 'sass:color';
+@use '../styles/variables' as *;
+
+.btn {
+  @include button-base;
+
+  &--primary {
+    background: $gradient-primary;
+    color: $text-primary;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: $shadow-glow;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $text-primary;
+    border: 2px solid $primary-cyan;
+
+    &:hover:not(:disabled) {
+      background: $primary-cyan;
+      color: $bg-dark;
+    }
+  }
+
+  &--danger {
+    background: $primary-pink;
+    color: $text-primary;
+
+    &:hover:not(:disabled) {
+      background: color.adjust($primary-pink, $lightness: -10%);
+    }
+  }
+
+  &--sm {
+    padding: 8px 16px;
+    font-size: $font-size-sm;
+  }
+
+  &--md {
+    padding: 12px 24px;
+    font-size: $font-size-base;
+  }
+
+  &--lg {
+    padding: 16px 32px;
+    font-size: $font-size-lg;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}

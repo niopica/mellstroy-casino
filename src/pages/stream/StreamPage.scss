@@ -1,0 +1,1608 @@
+/* ===== MELLSTROY CASINO - STREAM PAGE ===== */
+
+/* Изоляция стилей для страницы стрима */
+.stream-page {
+  /* Все стили страницы стрима изолированы внутри этого класса */
+}
+
+.stream-main {
+  padding-top: var(--header-height);
+  min-height: 100vh;
+  background: var(--bg-dark);
+}
+
+.stream-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 32px var(--container-padding);
+  min-height: calc(100vh - var(--header-height));
+  margin-bottom: 80px;
+}
+
+/* Основной плеер */
+.stream-player-section {
+  background: #000000;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stream-player-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.stream-player {
+  background: #000000;
+  border-radius: 6px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stream-player > * {
+  position: relative;
+  z-index: 2;
+}
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #000000;
+  border-radius: 6px;
+  min-width: 0;
+}
+
+.stream-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: #ffa500;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.stream-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.viewers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  background: #000000;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  position: static;
+}
+
+.status.online {
+  background: #ffa500;
+  color: #ffffff;
+}
+
+.status.offline {
+  background: rgba(255, 0, 122, 0.2);
+  color: var(--primary-pink);
+  border: 1px solid var(--primary-pink);
+}
+
+/* Видео контейнер */
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.main-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Кастомные контролы */
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 6px 6px;
+}
+
+.video-container:hover .video-controls {
+  opacity: 1;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.video-control-btn {
+  background: #000000;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffa500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.video-control-btn:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+.video-control-btn:active {
+  transform: scale(0.95);
+}
+
+.video-control-btn i {
+  font-size: 14px;
+}
+
+.progress-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-bar:hover {
+  height: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ffa500;
+  border-radius: 2px;
+  transition: width 0.1s ease;
+}
+
+.time {
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 500;
+  min-width: 40px;
+  text-align: center;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-bar {
+  width: 60px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.volume-bar:hover {
+  height: 5px;
+}
+
+.volume-fill {
+  height: 100%;
+  background: #ffa500;
+  border-radius: 2px;
+  transition: width 0.1s ease;
+}
+
+.fullscreen-btn {
+  background: #000000;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffa500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.fullscreen-btn:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+.fullscreen-btn:active {
+  transform: scale(0.95);
+}
+
+.fullscreen-btn i {
+  font-size: 14px;
+}
+
+/* Донаты */
+.donations-section {
+  margin-top: 24px;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.recent-donations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.donation-item-recent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-glass);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-normal);
+}
+
+.donation-item-recent:hover {
+  background: var(--bg-glass-hover);
+  transform: translateX(4px);
+}
+
+.donation-icon-recent {
+  font-size: var(--font-size-lg);
+}
+
+.donation-info-recent {
+  flex: 1;
+}
+
+.donation-amount-recent {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-cyan);
+}
+
+.donation-message-recent {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.donation-user-recent {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Другие стримы */
+.other-streams {
+  margin-top: 24px;
+}
+
+.streams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stream-card {
+  background: var(--bg-glass);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: 1px solid var(--border-color);
+}
+
+.stream-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--primary-cyan);
+}
+
+.stream-thumbnail {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.stream-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.stream-card:hover .stream-thumbnail img {
+  transform: scale(1.05);
+}
+
+.stream-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+.stream-card:hover .stream-overlay {
+  opacity: 1;
+}
+
+.stream-overlay i {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.stream-info {
+  padding: 12px;
+}
+
+.stream-info h4 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.stream-info .viewers {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Чат */
+.chat-section {
+  background: #000000;
+  border-radius: 6px;
+}
+
+/* Чат для мобильных устройств - скрыт по умолчанию */
+.chat-mobile {
+  display: none;
+}
+
+/* Чат для десктопа - скрыт по умолчанию */
+.chat-desktop {
+  display: none;
+}
+
+/* На десктопе чат должен быть справа от stream-player-section */
+@media (min-width: 769px) {
+  .stream-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .stream-player-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Показываем только десктопный чат */
+  .chat-desktop {
+    display: flex !important;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height) - 48px);
+    background: #000000;
+    border-radius: 6px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    align-self: start;
+    margin-top: 0;
+    padding-top: 0;
+    top: 0;
+  }
+
+  /* Скрываем мобильный чат */
+  .chat-mobile {
+    display: none !important;
+  }
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #000000;
+  border-radius: 6px;
+}
+
+.chat-header h3 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: #ffa500;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.chat-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.chat-toggle:hover {
+  background: var(--bg-glass-hover);
+}
+
+.chat-container {
+  background: #000000;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #000000;
+  border-radius: 6px 6px 0 0;
+  min-height: 0;
+  max-height: calc(100% - 80px);
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px;
+  margin-bottom: 2px;
+  background: #000000;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  animation: chatSlideIn 0.2s ease-out;
+}
+
+.chat-message:hover {
+  background: #333333;
+  transform: translateX(2px);
+}
+
+.chat-message.user {
+  background: #333333;
+}
+
+.chat-message.bot {
+  background: #ffffff;
+}
+
+.chat-message.moderator {
+  background: #333333;
+}
+
+.chat-message.subscriber {
+  background: #333333;
+}
+
+.chat-username {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-accent);
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.chat-username.user {
+  color: var(--primary-cyan);
+}
+
+.chat-username.bot {
+  color: var(--primary-purple);
+}
+
+.chat-username.moderator {
+  color: var(--primary-green);
+}
+
+.chat-username.subscriber {
+  color: var(--primary-gold);
+}
+
+.chat-text {
+  font-size: 12px;
+  color: var(--text-primary);
+  line-height: 1.3;
+  flex: 1;
+  word-wrap: break-word;
+}
+
+.chat-timestamp {
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
+  background: #000000;
+  border-radius: 0 0 6px 6px;
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  outline: none;
+  transition: var(--transition-normal);
+}
+
+.chat-input:focus {
+  border-color: var(--primary-cyan);
+  box-shadow: 0 0 0 2px rgba(0, 200, 255, 0.2);
+}
+
+.chat-send-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+}
+
+.chat-send-btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-send-btn:active {
+  transform: scale(0.95);
+}
+
+.chat-send-btn i {
+  font-size: 14px;
+}
+
+/* Эффекты для сообщений */
+.chat-message.highlight {
+  animation: chatHighlight 1s ease-out;
+}
+
+.donation-item-recent {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.stream-card {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Анимации */
+@keyframes chatSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes chatHighlight {
+  0% {
+    background: rgba(0, 224, 255, 0.1);
+  }
+  50% {
+    background: rgba(0, 224, 255, 0.2);
+  }
+  100% {
+    background: rgba(0, 224, 255, 0.05);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Скроллбар для чата */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--primary-purple);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-cyan);
+}
+
+/* Адаптивность для видеоплеера */
+@media (max-width: 1920px) {
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .video-controls {
+    padding: 12px;
+  }
+
+  .controls-row {
+    gap: 16px;
+  }
+
+  .video-control-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-control-btn i {
+    font-size: 14px;
+  }
+
+  .progress-container {
+    gap: 12px;
+  }
+
+  .progress-bar {
+    height: 3px;
+  }
+
+  .volume-container {
+    gap: 8px;
+  }
+
+  .volume-bar {
+    width: 60px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .video-controls {
+    padding: 12px;
+  }
+
+  .controls-row {
+    gap: 14px;
+  }
+
+  .video-control-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-control-btn i {
+    font-size: 13px;
+  }
+
+  .progress-container {
+    gap: 10px;
+  }
+
+  .progress-bar {
+    height: 3px;
+  }
+
+  .volume-container {
+    gap: 8px;
+  }
+
+  .volume-bar {
+    width: 60px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .video-controls {
+    padding: 12px;
+  }
+
+  .controls-row {
+    gap: 12px;
+  }
+
+  .video-control-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-control-btn i {
+    font-size: 13px;
+  }
+
+  .progress-container {
+    gap: 10px;
+  }
+
+  .progress-bar {
+    height: 3px;
+  }
+
+  .volume-container {
+    gap: 8px;
+  }
+
+  .volume-bar {
+    width: 60px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .video-controls {
+    padding: 15px;
+  }
+
+  .controls-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .video-control-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .video-control-btn i {
+    font-size: 12px;
+  }
+
+  .progress-container {
+    gap: 8px;
+    min-width: 150px;
+  }
+
+  .progress-bar {
+    height: 5px;
+    min-width: 120px;
+  }
+
+  .volume-container {
+    gap: 6px;
+    min-width: 100px;
+  }
+
+  .volume-bar {
+    width: 60px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 11px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    aspect-ratio: 9/16; /* Вертикальное соотношение для мобильных */
+  }
+
+  .video-controls {
+    padding: 12px;
+  }
+
+  .controls-row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .video-control-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-control-btn i {
+    font-size: 11px;
+  }
+
+  .progress-container {
+    gap: 6px;
+    min-width: 120px;
+  }
+
+  .progress-bar {
+    height: 4px;
+    min-width: 100px;
+  }
+
+  .volume-container {
+    gap: 4px;
+    min-width: 80px;
+  }
+
+  .volume-bar {
+    width: 50px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 10px;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 320px) {
+  .video-container {
+    aspect-ratio: 9/16;
+  }
+
+  .video-controls {
+    padding: 10px;
+  }
+
+  .controls-row {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .video-control-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .video-control-btn i {
+    font-size: 10px;
+  }
+
+  .progress-container {
+    gap: 4px;
+    min-width: 100px;
+  }
+
+  .progress-bar {
+    height: 3px;
+    min-width: 80px;
+  }
+
+  .volume-container {
+    gap: 4px;
+    min-width: 70px;
+  }
+
+  .volume-bar {
+    width: 40px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 9px;
+    min-width: 50px;
+  }
+}
+
+/* Адаптивность для видеоплеера */
+@media (max-width: 1920px) {
+  .video-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .video-controls {
+    padding: 14px;
+  }
+
+  .controls-row {
+    gap: 14px;
+  }
+
+  .video-control-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .video-control-btn i {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stream-container {
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+  }
+
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .video-controls {
+    padding: 13px;
+  }
+
+  .controls-row {
+    gap: 13px;
+  }
+
+  .video-control-btn {
+    width: 33px;
+    height: 33px;
+  }
+
+  .video-control-btn i {
+    font-size: 12px;
+  }
+
+  .progress-container {
+    gap: 10px;
+    min-width: 140px;
+  }
+
+  .progress-bar {
+    height: 4px;
+    min-width: 110px;
+  }
+
+  .volume-container {
+    gap: 6px;
+    min-width: 90px;
+  }
+
+  .volume-bar {
+    width: 55px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 11px;
+    min-width: 65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stream-container {
+    padding: 0;
+    margin: 0 0 32px 0;
+    max-width: 100%;
+  }
+
+  .stream-player-section {
+    padding: 0;
+    gap: 8px;
+  }
+
+  .stream-player {
+    padding: 8px;
+    border-radius: 0;
+  }
+
+  .player-header {
+    padding: 8px 12px;
+    border-radius: 0;
+  }
+
+  .stream-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .video-container {
+    margin: 0;
+    border-radius: 0;
+    aspect-ratio: 16/9; /* Обычный формат для мобильных */
+    width: 100%;
+  }
+
+  .main-video-player {
+    border-radius: 0;
+  }
+
+  .video-controls {
+    padding: 15px;
+  }
+
+  .controls-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .video-control-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .video-control-btn i {
+    font-size: 12px;
+  }
+
+  .progress-container {
+    gap: 8px;
+    min-width: 150px;
+  }
+
+  .progress-bar {
+    height: 5px;
+    min-width: 120px;
+  }
+
+  .volume-container {
+    gap: 6px;
+    min-width: 100px;
+  }
+
+  .volume-bar {
+    width: 60px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 11px;
+    min-width: 70px;
+  }
+
+  .donations-section {
+    order: 3 !important;
+    padding: 16px;
+    margin: 0 8px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .recent-donations {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  .other-streams {
+    order: 4 !important;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .streams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Показываем мобильный чат внутри stream-player-section */
+  .chat-mobile {
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 350px !important;
+    max-height: 350px !important;
+    padding: 12px !important;
+    margin: 0 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chat-mobile .chat-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .chat-mobile .chat-container .chat-messages {
+    flex: 1 !important;
+    min-height: 0 !important;
+    max-height: calc(100% - 80px) !important;
+    overflow-y: auto !important;
+  }
+
+  .chat-mobile .chat-container .chat-input-container {
+    padding: 12px;
+    gap: 6px;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    flex-shrink: 0 !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    background: #000000 !important;
+    border-top: 1px solid var(--border-color) !important;
+    margin: 0 !important;
+  }
+
+  .chat-mobile .chat-container .chat-input-container .chat-input {
+    padding: 10px 12px;
+    font-size: 14px;
+    min-width: 0;
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-glass);
+    color: var(--text-primary);
+  }
+
+  .chat-mobile .chat-container .chat-input-container .chat-send-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-mobile .chat-toggle {
+    display: none !important;
+  }
+
+  /* Скрываем десктопный чат */
+  .chat-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stream-container {
+    padding: 12px var(--container-padding);
+  }
+
+  .stream-player-section {
+    padding: 12px;
+  }
+
+  .stream-player {
+    padding: 8px;
+  }
+
+  .player-header {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .stream-title {
+    font-size: var(--font-size-md);
+  }
+
+  .stream-stats {
+    gap: 8px;
+  }
+
+  .viewers {
+    font-size: var(--font-size-xs);
+    padding: 2px 6px;
+  }
+
+  .status {
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+
+  .video-container {
+    aspect-ratio: 16/9; /* Обычный формат для маленьких мобильных */
+    width: 100%;
+  }
+
+  .video-controls {
+    padding: 12px;
+  }
+
+  .controls-row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .video-control-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-control-btn i {
+    font-size: 11px;
+  }
+
+  .progress-container {
+    gap: 6px;
+    min-width: 120px;
+  }
+
+  .progress-bar {
+    height: 4px;
+    min-width: 100px;
+  }
+
+  .volume-container {
+    gap: 4px;
+    min-width: 80px;
+  }
+
+  .volume-bar {
+    width: 50px;
+    height: 3px;
+  }
+
+  .time {
+    font-size: 10px;
+    min-width: 60px;
+  }
+
+  .donations-section {
+    padding: 12px;
+    margin: 0 8px;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  .recent-donations {
+    max-height: 130px;
+    overflow-y: auto;
+  }
+
+  .other-streams {
+    padding: 12px;
+  }
+
+  /* Показываем мобильный чат внутри stream-player-section */
+  .chat-mobile {
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 350px !important;
+    max-height: 350px !important;
+    padding: 12px !important;
+    margin: 0 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chat-mobile .chat-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .chat-mobile .chat-container .chat-messages {
+    flex: 1 !important;
+    min-height: 0 !important;
+    max-height: calc(100% - 80px) !important;
+    overflow-y: auto !important;
+  }
+
+  .chat-mobile .chat-container .chat-input-container {
+    padding: 12px;
+    gap: 6px;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    flex-shrink: 0 !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    background: #000000 !important;
+    border-top: 1px solid var(--border-color) !important;
+    margin: 0 !important;
+  }
+
+  .chat-mobile .chat-container .chat-input-container .chat-input {
+    padding: 10px 12px;
+    font-size: 14px;
+    min-width: 0;
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-glass);
+    color: var(--text-primary);
+  }
+
+  .chat-mobile .chat-container .chat-input-container .chat-send-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-mobile .chat-toggle {
+    display: none !important;
+  }
+
+  .donations-section {
+    padding: 16px;
+  }
+
+  .other-streams {
+    padding: 16px;
+  }
+
+  .streams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-messages {
+    padding: 12px;
+  }
+
+  .chat-input-container {
+    padding: 12px;
+    gap: 6px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .chat-input {
+    padding: 10px 12px;
+    font-size: 14px;
+    min-width: 0;
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-glass);
+    color: var(--text-primary);
+  }
+
+  .chat-send-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: none;
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .stream-container {
+    padding: 8px;
+  }
+
+  .stream-player-section {
+    padding: 8px;
+    margin: 0 4px;
+  }
+
+  .stream-player {
+    padding: 6px;
+  }
+
+  .player-header {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  .stream-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .stream-stats {
+    gap: 6px;
+  }
+
+  .viewers {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .status {
+    padding: 2px 6px;
+    font-size: 9px;
+  }
+
+  .video-container {
+    aspect-ratio: 16/9; /* Обычный формат для самых маленьких экранов */
+    width: 100%;
+  }
+
+  .video-controls {
+    padding: 8px;
+  }
+
+  .controls-row {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .video-control-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .video-control-btn i {
+    font-size: 10px;
+  }
+
+  .progress-container {
+    gap: 4px;
+    min-width: 100px;
+  }
+
+  .progress-bar {
+    height: 3px;
+    min-width: 80px;
+  }
+
+  .volume-container {
+    gap: 3px;
+    min-width: 60px;
+  }
+
+  .volume-bar {
+    width: 40px;
+    height: 2px;
+  }
+
+  .time {
+    font-size: 9px;
+    min-width: 50px;
+  }
+
+  .donations-section {
+    padding: 12px;
+    margin: 0 8px;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+
+  .recent-donations {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+
+  .other-streams {
+    padding: 12px;
+  }
+
+  .streams-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

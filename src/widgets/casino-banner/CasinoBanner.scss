@@ -1,0 +1,309 @@
+/* ===== MELLSTROY CASINO - CASINO BANNER ===== */
+
+.casino-banner {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.banner-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(108, 0, 255, 0.1) 0%,
+    rgba(0, 224, 255, 0.1) 50%,
+    rgba(255, 0, 122, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 2;
+}
+
+.banner-container {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1200px;
+  padding: 0 var(--container-padding);
+}
+
+.banner-content {
+  animation: fadeIn 1s ease-out;
+}
+
+.banner-title {
+  margin-bottom: 32px;
+}
+
+.banner-text-main {
+  display: block;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-black);
+  color: var(--primary-pink);
+  text-shadow: 0 0 30px rgba(255, 0, 122, 0.5);
+  margin-bottom: 8px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.banner-text-casino {
+  display: block;
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-black);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(108, 0, 255, 0.3);
+  margin-bottom: 8px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.banner-text-subtitle {
+  display: block;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-cyan);
+  text-shadow: 0 0 25px rgba(0, 224, 255, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.banner-description {
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-description p {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.banner-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.banner-btn.primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.banner-btn.primary:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 50px rgba(108, 0, 255, 0.6);
+}
+
+.banner-btn.secondary {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  border: 2px solid var(--primary-cyan);
+  backdrop-filter: blur(15px);
+}
+
+.banner-btn.secondary:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--primary-pink);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 224, 255, 0.4);
+}
+
+.banner-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary-gold);
+  border-radius: 50%;
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  top: 30%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.sparkle-3 {
+  bottom: 40%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.sparkle-4 {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.sparkle-5 {
+  top: 50%;
+  left: 50%;
+  animation-delay: 1.5s;
+}
+
+/* Анимации */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 0, 122, 0.5);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 0, 122, 0.8);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes sparkleFloat {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0px) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .banner-text-casino {
+    font-size: var(--font-size-5xl);
+  }
+
+  .banner-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-text-casino {
+    font-size: var(--font-size-4xl);
+  }
+
+  .banner-text-main {
+    font-size: var(--font-size-xl);
+  }
+
+  .banner-text-subtitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .banner-description p {
+    font-size: var(--font-size-base);
+  }
+
+  .banner-btn {
+    padding: 14px 28px;
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-text-casino {
+    font-size: var(--font-size-3xl);
+  }
+
+  .banner-text-main {
+    font-size: var(--font-size-lg);
+  }
+
+  .banner-text-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .banner-btn {
+    padding: 12px 24px;
+    font-size: var(--font-size-sm);
+    min-width: 150px;
+  }
+}

@@ -1,0 +1,144 @@
+/* ===== MELLSTROY CASINO - OTHER STREAMS ===== */
+
+.other-streams {
+  margin: 32px 0;
+}
+
+.section-subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.streams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.stream-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.stream-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--primary-cyan);
+}
+
+.stream-thumbnail {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.stream-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stream-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stream-card:hover .stream-overlay {
+  opacity: 1;
+}
+
+.stream-overlay i {
+  font-size: var(--font-size-3xl);
+  color: #ffffff;
+}
+
+.stream-info {
+  padding: 16px;
+}
+
+.stream-info h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.stream-info .viewers {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .streams-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .other-streams {
+    margin: 24px 0;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: 16px;
+  }
+
+  .streams-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stream-info {
+    padding: 12px;
+  }
+
+  .stream-info h4 {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .other-streams {
+    margin: 20px 0;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-md);
+    margin-bottom: 12px;
+  }
+
+  .streams-grid {
+    gap: 12px;
+  }
+
+  .stream-info {
+    padding: 10px;
+  }
+
+  .stream-info h4 {
+    font-size: var(--font-size-sm);
+  }
+
+  .stream-info .viewers {
+    font-size: var(--font-size-xs);
+  }
+}
