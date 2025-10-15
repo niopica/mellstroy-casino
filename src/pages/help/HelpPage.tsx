@@ -280,7 +280,6 @@ export const HelpPage: React.FC = () => {
                 </div>
                 <div className="quote-section">
                   <div className="quote-card">
-                    <div className="quote-icon">💬</div>
                     <div className="quote-text">
                       <blockquote>
                         <em>

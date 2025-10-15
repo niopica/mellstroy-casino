@@ -10,6 +10,16 @@ export const ChallengesPage: React.FC = () => {
 
   const activeChallenges = [
     {
+      id: 'record-tiktok',
+      icon: '♪',
+      title: 'Рекорд в тик ток',
+      description: 'Побить любой рекорд в тик ток, Лайки, Комментарии, Репосты',
+      reward: '5 млн ₽',
+      rewardIcon: '💰',
+      videoUrl: 'https://www.youtube.com/watch?v=jfKfPfyJRdk',
+      status: 'active',
+    },
+    {
       id: 'football-greeting',
       icon: '⚽',
       title: 'Привет от футболистов',

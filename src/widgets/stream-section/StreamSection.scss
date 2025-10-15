@@ -5,9 +5,17 @@
   padding: 80px 0;
 }
 
+.stream-section .section-title {
+  margin-bottom: 40px;
+}
+
+.stream-section .container {
+  padding: 0 var(--container-padding);
+}
+
 .stream-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -21,6 +29,8 @@
   border: 1px solid var(--border-color);
   transition: var(--transition-normal);
   cursor: pointer;
+  min-width: 300px;
+  min-height: 220px;
 }
 
 .stream-card:hover {
@@ -33,6 +43,7 @@
   position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
+  min-height: 140px;
 }
 
 .stream-thumbnail img {
@@ -107,6 +118,7 @@
 
 .stream-info {
   padding: 24px;
+  min-height: 80px;
 }
 
 .stream-info h3 {
@@ -114,12 +126,14 @@
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
   margin-bottom: 12px;
+  min-height: 28px;
 }
 
 .stream-stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 40px;
 }
 
 .viewers {
@@ -135,26 +149,224 @@
 }
 
 /* Адаптивность */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .stream-grid {
-    grid-template-columns: 1fr;
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stream-section {
+    padding: 60px 0;
+  }
+
+  .stream-section .section-title {
+    margin-bottom: 30px;
+    font-size: var(--font-size-3xl);
+  }
+
+  .stream-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
+  .stream-section {
+    padding: 40px 0;
+  }
+
+  .stream-section .section-title {
+    margin-bottom: 25px;
+    font-size: var(--font-size-2xl);
+  }
+
   .stream-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 15px;
   }
-}
 
-@media (max-width: 480px) {
+  .stream-card {
+    margin: 0 auto;
+    max-width: 400px;
+    min-width: 280px;
+    min-height: 200px;
+  }
+
+  .stream-thumbnail {
+    min-height: 120px;
+  }
+
   .stream-info {
     padding: 20px;
+    min-height: 80px;
+  }
+
+  .stream-info h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: 8px;
+    min-height: 24px;
   }
 
   .stream-stats {
     flex-direction: column;
     gap: 8px;
     align-items: flex-start;
+    min-height: 40px;
+  }
+
+  .viewers {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .stream-section {
+    padding: 30px 0;
+  }
+
+  .stream-section .section-title {
+    margin-bottom: 20px;
+    font-size: var(--font-size-xl);
+  }
+
+  .stream-grid {
+    padding: 0 10px;
+    gap: 12px;
+  }
+
+  .stream-card {
+    max-width: 100%;
+    min-width: 250px;
+    min-height: 180px;
+  }
+
+  .stream-thumbnail {
+    min-height: 100px;
+  }
+
+  .stream-info {
+    padding: 16px;
+    min-height: 70px;
+  }
+
+  .stream-info h3 {
+    font-size: var(--font-size-sm);
+    margin-bottom: 6px;
+    min-height: 20px;
+  }
+
+  .stream-stats {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    min-height: 35px;
+  }
+
+  .viewers {
+    font-size: var(--font-size-xs);
+  }
+
+  .status {
+    top: 8px;
+    right: 8px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stream-section {
+    padding: 20px 0;
+  }
+
+  .stream-section .section-title {
+    margin-bottom: 15px;
+    font-size: var(--font-size-lg);
+  }
+
+  .stream-grid {
+    padding: 0 8px;
+    gap: 10px;
+  }
+
+  .stream-card {
+    min-width: 220px;
+    min-height: 160px;
+  }
+
+  .stream-thumbnail {
+    min-height: 90px;
+  }
+
+  .stream-info {
+    padding: 12px;
+    min-height: 60px;
+  }
+
+  .stream-info h3 {
+    font-size: var(--font-size-xs);
+    margin-bottom: 4px;
+    min-height: 18px;
+  }
+
+  .stream-stats {
+    min-height: 30px;
+  }
+
+  .viewers {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .stream-section {
+    padding: 15px 0;
+  }
+
+  .stream-section .section-title {
+    margin-bottom: 12px;
+    font-size: var(--font-size-base);
+  }
+
+  .stream-grid {
+    padding: 0 5px;
+    gap: 8px;
+  }
+
+  .stream-card {
+    min-width: 200px;
+    min-height: 150px;
+  }
+
+  .stream-thumbnail {
+    min-height: 80px;
+  }
+
+  .stream-info {
+    padding: 10px;
+    min-height: 50px;
+  }
+
+  .stream-info h3 {
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+    min-height: 16px;
+  }
+
+  .stream-stats {
+    min-height: 25px;
+  }
+
+  .viewers {
+    font-size: 0.65rem;
+  }
+
+  .status {
+    top: 6px;
+    right: 6px;
+    padding: 1px 6px;
+    font-size: 0.6rem;
   }
 }
