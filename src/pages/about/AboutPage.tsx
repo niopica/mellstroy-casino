@@ -259,7 +259,7 @@ export const AboutPage: React.FC = () => {
                   <h3 className="story-title">🚀 Путь к успеху</h3>
                   <div className="story-timeline">
                     <div className="story-item">
-                      <div className="story-year">2018-2019</div>
+                      <div className="story-year">2016-2019</div>
                       <div className="story-content">
                         <h4>🎮 Начало карьеры</h4>
                         <p>
@@ -423,14 +423,14 @@ export const AboutPage: React.FC = () => {
               <div className="achievement-card">
                 <div className="achievement-icon">👥</div>
                 <div className="achievement-content">
-                  <div className="achievement-number">15M+</div>
+                  <div className="achievement-number">3М+</div>
                   <div className="achievement-label">Подписчиков</div>
                 </div>
               </div>
               <div className="achievement-card">
                 <div className="achievement-icon">💰</div>
                 <div className="achievement-content">
-                  <div className="achievement-number">50M+</div>
+                  <div className="achievement-number">150M+</div>
                   <div className="achievement-label">Донатов получено</div>
                 </div>
               </div>
@@ -498,19 +498,19 @@ export const AboutPage: React.FC = () => {
               <div className="earnings-stats">
                 <div className="earnings-stat">
                   <div className="stat-label">Общий доход</div>
-                  <div className="stat-value">$2,500,000</div>
+                  <div className="stat-value">$6.500.000</div>
                 </div>
                 <div className="earnings-stat">
                   <div className="stat-label">Донаты</div>
-                  <div className="stat-value">$1,800,000</div>
+                  <div className="stat-value">$1.00.000</div>
                 </div>
                 <div className="earnings-stat">
                   <div className="stat-label">Реклама</div>
-                  <div className="stat-value">$500,000</div>
+                  <div className="stat-value">$1.000.000</div>
                 </div>
                 <div className="earnings-stat">
                   <div className="stat-label">Проекты</div>
-                  <div className="stat-value">$200,000</div>
+                  <div className="stat-value">$2.000.000</div>
                 </div>
               </div>
             </div>

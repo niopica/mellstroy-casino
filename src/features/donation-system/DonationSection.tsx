@@ -24,7 +24,7 @@ export const DonationSection: React.FC = () => {
   return (
     <section className="donation-section">
       <div className="container">
-        <h2 className="section-title">💎 Поддержи Мелстроя</h2>
+        <h2 className="section-title">💎  Мелстроя</h2>
         <p className="section-subtitle">Каждый донат приближает новый контент!</p>
         <div className="donation-grid">
           <div className="donation-card" data-amount={500}>

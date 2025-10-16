@@ -54,7 +54,7 @@ export const HelpPage: React.FC = () => {
               <div className="stat-card">
                 <div className="stat-icon">💰</div>
                 <div className="stat-content">
-                  <div className="stat-value">15,000,000₽</div>
+                  <div className="stat-value">150.000.000₽</div>
                   <div className="stat-label">Помощь оказана</div>
                 </div>
               </div>

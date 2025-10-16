@@ -5,10 +5,6 @@ import './CasinoBanner.scss';
 export const CasinoBanner: React.FC = () => {
   const navigate = useNavigate();
 
-  const handlePlayNow = () => {
-    navigate('/games');
-  };
-
   const handleWatchStream = () => {
     navigate('/stream');
   };
@@ -30,9 +26,9 @@ export const CasinoBanner: React.FC = () => {
             <p>Играй, выигрывай, помогай другим — всё в одном месте!</p>
           </div>
           <div className="banner-actions">
-            <button className="banner-btn primary" onClick={handlePlayNow}>
+            <a href="https://mellstroy.com" className="banner-btn primary">
               <i className="fas fa-play"></i> 🎰 Играть сейчас
-            </button>
+            </a>
             <button className="banner-btn secondary" onClick={handleWatchStream}>
               <i className="fas fa-video"></i> 📺 Смотреть стрим
             </button>
